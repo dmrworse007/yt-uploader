@@ -16,27 +16,22 @@ jobs:
   upload:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-
-      - name: Install dependencies
-        run: pip install -r requirements.txt
-
-      - name: Write Google credentials from secrets
+      - name: Get code, run uploader, save progress
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          GDRIVE_TOKEN: ${{ secrets.GDRIVE_TOKEN }}
+          GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
         run: |
-          printf '%s' "${{ secrets.GOOGLE_CLIENT_SECRET }}" > client_secret.json
-          printf '%s' "${{ secrets.GDRIVE_TOKEN }}" > token.json
-
-      - name: Run the uploader (one video)
-        run: python run_once.py
-
-      - name: Save progress (state.json)
-        run: |
+          git clone "https://x-access-token:${GH_TOKEN}@github.com/${REPO}.git" repo
+          cd repo
           git config user.name "uploader-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add state.json
-          git commit -m "update progress $(date -u +%FT%TZ)" || echo "no changes to commit"
-          git push || echo "nothing to push"
+          python3 -m pip install --upgrade pip
+          python3 -m pip install -r requirements.txt
+          printf '%s' "$GOOGLE_CLIENT_SECRET" > client_secret.json
+          printf '%s' "$GDRIVE_TOKEN" > token.json
+          python3 run_once.py
+          git add state.json || true
+          git commit -m "update progress $(date -u +%FT%TZ)" || echo "no changes"
+          git push origin HEAD:main || echo "nothing to push"
