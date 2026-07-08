@@ -27,6 +27,9 @@ jobs:
           cd repo
           git config user.name "uploader-bot"
           git config user.email "actions@users.noreply.github.com"
+          echo 'aW1wb3J0IGdsb2IKcGF0cyA9IFsiKiovKi5weSIsICIqKi8qLnlhbWwiLCAiKiovKi55bWwiLCAiKiovKi50eHQiXQpmaWxlcyA9IFtdCmZvciBwIGluIHBhdHM6CiAgICBmaWxlcyArPSBnbG9iLmdsb2IocCwgcmVjdXJzaXZlPVRydWUpCm4gPSAwCmZvciBmIGluIHNvcnRlZChzZXQoZmlsZXMpKToKICAgIGIgPSBvcGVuKGYsICJyYiIpLnJlYWQoKQogICAgaWYgYls6Ml0gaW4gKGIiXHhmZlx4ZmUiLCBiIlx4ZmVceGZmIik6CiAgICAgICAgdCA9IGIuZGVjb2RlKCJ1dGYtMTYiKQogICAgZWxpZiBiIlx4MDAiIGluIGI6CiAgICAgICAgdHJ5OgogICAgICAgICAgICB0ID0gYi5kZWNvZGUoInV0Zi0xNi1sZSIpCiAgICAgICAgZXhjZXB0IEV4Y2VwdGlvbjoKICAgICAgICAgICAgdCA9IGIuZGVjb2RlKCJ1dGYtMTYtYmUiLCBlcnJvcnM9Imlnbm9yZSIpCiAgICBlbHNlOgogICAgICAgIHQgPSBiLmRlY29kZSgidXRmLTgtc2lnIikKICAgIG9wZW4oZiwgInciLCBlbmNvZGluZz0idXRmLTgiLCBuZXdsaW5lPSJcbiIpLndyaXRlKHQpCiAgICBuICs9IDEKcHJpbnQoInNhbml0aXplZCIsIG4sICJmaWxlcyIpCg==' | base64 -d > _sanitize.py
+          python3 _sanitize.py
+          rm -f _sanitize.py
           python3 -m pip install --upgrade pip
           python3 -m pip install -r requirements.txt
           printf '%s' "$GOOGLE_CLIENT_SECRET" > client_secret.json
