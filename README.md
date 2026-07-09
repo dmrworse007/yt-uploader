@@ -6,7 +6,7 @@ no computer needs to stay on.
 
 - **Repo:** https://github.com/dmrworse007/yt-uploader
 - **Source (Drive):** folder ("Viral Reels Bundle")
-- **Channel:** [your YouTube channel](https://www.youtube.com/@Hunters_dpk) (authorized via Google OAuth)
+- **Channel:** [YouTube channel](https://www.youtube.com/@Hunters_dpk) (authorized via Google OAuth)
 - **Schedule:** every 4 hours (up to 6 uploads/day)
 - **Cost:** free (public GitHub repo = unlimited Actions minutes)
 
@@ -14,12 +14,11 @@ no computer needs to stay on.
 
 ## 1. What it does, in one paragraph
 
-Every 4 hours GitHub runs the workflow on its own servers. It reads your Drive
-"Viral Reels Bundle" folder (following the shortcuts into all 30 sub-bundles),
+Every 4 hours GitHub runs the workflow on its own servers. It reads a Drive (following the shortcuts into all 30 sub-bundles containing 10k+ reels),
 skips editing junk (transitions, overlays, effects, etc.), picks a **random**
 reel it hasn't posted yet, reformats it into a vertical 1080×1920 Short,
-auto-writes a title/description/hashtags, uploads it to your channel, records
-it so it's never posted twice, and stops after 6 uploads/day. Your computer
+auto-writes a title/description/hashtags, uploads it to the channel, records
+it so it's never posted twice, and stops after 6 uploads/day. The computer
 can be off the entire time.
 
 ---
@@ -35,7 +34,7 @@ GitHub Actions scheduler  (cron: every 4 hours)
         ▼
    python run_once.py
         │
-        ├─ auth.py .......... logs in to Google with your cached token (auto-refresh)
+        ├─ auth.py .......... logs in to Google with my cached token (auto-refresh)
         ├─ drive_client.py .. crawls the folder + shortcuts, lists every video
         ├─ (skip filter) .... drops transitions/overlays/effects by filename
         ├─ (random pick) .... shuffles remaining clips, takes the next one
@@ -49,8 +48,8 @@ GitHub Actions scheduler  (cron: every 4 hours)
 ```
 
 **Credentials** live as encrypted GitHub Actions **secrets**, never in the code:
-- `GDRIVE_TOKEN` — your Google login token (from `token.json`)
-- `GOOGLE_CLIENT_SECRET` — your OAuth app credentials (from `client_secret.json`)
+- `GDRIVE_TOKEN` — my Google login token (from `token.json`)
+- `GOOGLE_CLIENT_SECRET` — my OAuth app credentials (from `client_secret.json`)
 
 ---
 
@@ -149,19 +148,3 @@ repeats.
   clean copy (file uploads preserve bytes; the issue was a one-time source glitch).
 
 ---
-
-## 9. Safety & good standing
-
-- These are resell/PLR clips. YouTube's **reused-content** and **spam** policies
-  are separate from any license — the deliberately slow 6/day drip reduces the
-  risk of flags. Watch your channel; if you see strikes or reused-content
-  warnings, slow down or reconsider.
-- **Keep secrets private:** never expose `token.json` or `client_secret.json`.
-  They're stored encrypted in GitHub Secrets, never in the code.
-- The old **laptop** version (Windows Task Scheduler) has been disabled so it
-  doesn't double-post alongside the cloud. Don't re-enable both at once.
-
----
-
-*Cloud deployment on GitHub Actions. Runs automatically every 4 hours — no
-computer required.*
