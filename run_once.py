@@ -2,6 +2,7 @@
 reformat to a vertical Short, generate metadata, upload, record state."""
 import logging
 import os
+import random
 import sys
 
 import yaml
@@ -90,6 +91,7 @@ def main():
 
     yt = None if dry_run else uploader.build_youtube(creds)
     uploaded = 0
+    random.shuffle(pending)  # random order so consecutive uploads differ
     for v in pending[:to_upload]:
         meta = metadata.generate(v["name"])
         if dry_run:
