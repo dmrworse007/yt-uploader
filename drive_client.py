@@ -102,4 +102,4 @@ def download_file(drive, file_id, dest_path):
         done = False
         while not done:
             _status, done = downloader.next_chunk()
-    return dest_pa
+    return dest_path
