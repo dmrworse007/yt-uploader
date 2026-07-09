@@ -1,4 +1,4 @@
-# YouTube Auto-Uploader — Full README
+# YouTube Auto-Uploader
 
 A hands-off system that automatically publishes Shorts from your Google Drive
 bundles to your YouTube channel, running 24/7 in the cloud (GitHub Actions) —
@@ -12,7 +12,7 @@ no computer needs to stay on.
 
 ---
 
-## 1. What it does, in one paragraph
+## 1. What it does
 
 Every 4 hours GitHub runs the workflow on its own servers. It reads a Drive (following the shortcuts into all 30 sub-bundles containing 10k+ reels),
 skips editing junk (transitions, overlays, effects, etc.), picks a **random**
