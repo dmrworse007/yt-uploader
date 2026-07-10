@@ -1,7 +1,7 @@
 drive_folder_id: "1FjS82kBjBZaMKZ0qkREY8opmO1r71A7M"
 
 uploads_per_run: 1
-max_uploads_per_day: 6
+max_uploads_per_day: 5
 
 privacy_status: "public"
 made_for_kids: false
