@@ -359,6 +359,11 @@
       "name": "MzShop PH  (3355).mp4",
       "video_id": "pHSm9c3C_ro",
       "uploaded_at": "2026-08-01T20:47:24.618866+00:00"
+    },
+    "1HF9wL1izXokuRXPF78fJHKQqxcwna6xs": {
+      "name": "Copy of DOG- MzShop Ph (256).mp4",
+      "video_id": "M15Z1aalGbM",
+      "uploaded_at": "2026-08-02T02:27:13.585818+00:00"
     }
   },
   "daily": {
@@ -377,6 +382,7 @@
     "2026-07-29": 6,
     "2026-07-30": 6,
     "2026-07-31": 6,
-    "2026-08-01": 6
+    "2026-08-01": 6,
+    "2026-08-02": 1
   }
 }
