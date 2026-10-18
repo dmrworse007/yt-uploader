@@ -2174,6 +2174,11 @@
       "name": "(69)Digishopers.mp4",
       "video_id": "IgQfZYTPBvA",
       "uploaded_at": "2026-10-17T21:58:21.144312+00:00"
+    },
+    "1gyiqMqxrQVaqvuUcQHh2lIY-hAejUcyp": {
+      "name": "854DA9D0DC893FBDE1E3122CAF2647A3_video_dashinit.mp4",
+      "video_id": "4GPGK1_86Mk",
+      "uploaded_at": "2026-10-18T02:52:55.519973+00:00"
     }
   },
   "daily": {
@@ -2269,6 +2274,7 @@
     "2026-10-14": 4,
     "2026-10-15": 4,
     "2026-10-16": 5,
-    "2026-10-17": 5
+    "2026-10-17": 5,
+    "2026-10-18": 1
   }
 }
