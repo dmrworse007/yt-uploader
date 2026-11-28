@@ -2829,6 +2829,11 @@
       "name": "7C40DAC67628CFC451A03A96AE6853B4_video_dashinit.mp4",
       "video_id": "Qt2MswYyfSI",
       "uploaded_at": "2026-11-28T06:08:15.218207+00:00"
+    },
+    "1Ce0G4RUR2OwLRsN6N5ixC7PoKDPhzFY_": {
+      "name": "IG-MZ (176).mp4",
+      "video_id": "QZDZkpqy0AE",
+      "uploaded_at": "2026-11-28T16:36:41.705313+00:00"
     }
   },
   "daily": {
@@ -2966,6 +2971,6 @@
     "2026-11-25": 3,
     "2026-11-26": 2,
     "2026-11-27": 3,
-    "2026-11-28": 1
+    "2026-11-28": 2
   }
 }
